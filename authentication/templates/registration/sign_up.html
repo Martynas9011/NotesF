@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up For M11</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    </head>
+<body>
+    <form method="post" action="{% url 'sign_up' %}">
+      {% csrf_token %}
+        <div class="hero is-fullheight">
+            <div class="hero-body is-justify-content-center is-align-items-center">
+                <div class="columns is-flex is-flex-direction-column box">
+                    <div class="column">
+                        <h2 style="text-align:center">Welcome To M11 Notes App</h2>
+                    </div>
+                    <div class="column">
+                        <label for="username">Username</label>
+                        <input class="input is-primary" name="username" type="text" placeholder="Username" >
+                    </div>
+                    <div class="column">
+                        <label for="email">Email</label>
+                        <input class="input is-primary" name="email" type="email" placeholder="email" >
+                    </div>
+                    <div class="column">
+                        <label for="password">Password</label>
+                        <input class="input is-primary" name="password1" type="password" placeholder="Password">
+                    </div>
+                    <div class="column">
+                        <label for="password">Password</label>
+                        <input class="input is-primary" name="password2" type="password" placeholder="Repeat Password">
+                    </div>
+                    <div class="column">
+                        <button class="button is-primary is-fullwidth" type="submit">Register</button>
+                    </div>
+                    {{form.errors}}
+
+                    <div class="has-text-centered">
+                        <p class="is-size-7"> Already have an account? <a href="{% url 'login' %}" class="has-text-primary">Login</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </form>
+    </body>
+
+
+{% endblock %}
