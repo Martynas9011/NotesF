@@ -24,7 +24,7 @@
         <title>Sign Up For M11</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     </head>
-<body>
+
 
 <div class="hero is-fullheight">
             <div class="hero-body is-justify-content-center is-align-items-center">
@@ -45,23 +45,18 @@
                     <div class="column">
                         <button class="button is-primary is-fullwidth" type="submit" value="login">Login</button>
                     </div>
-<!--                    {{form.errors}}-->
 
                     <div class="has-text-centered">
                         <p class="is-size-7"> Do not have an account? <a href="{% url 'sign_up' %}" class="has-text-primary">Sign Up</a>
                         </p>
-<!--                        <p class="is-size-7"> Lost Password? <a href="{% url 'password_reset' %}" class="has-text-primary">Lost password?</a>-->
-<!--                        </p>-->
+
                     </div>
                 </div>
             </div>
         </div>
       </form>
-    </body>
+
 
 </form>
-
-{# Assumes you set up the password_reset view in your URLconf #}
-
 
 {% endblock %}

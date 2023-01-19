@@ -8,11 +8,19 @@ def sign_up(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
+            # user = form.save()
+            # user.refresh_from_db()
+            # # load the profile instance created by the signal
+            # user.save()
+            # raw_password = form.cleaned_data.get('password1')
+            #
+            # # login user after signing up
+            # user = authenticate(username=user.username, password=raw_password)
+            # login(request, user)
             return redirect(reverse('index'))
-        return redirect(reverse('sign_up'))
     else:
         form = SignUpForm()
-    return render(request, 'registration/sign_up.html', context={'form': form})
+    return render(request, 'registration/sign_up.html', {'form': form})
 
 
 def user_account(request):
